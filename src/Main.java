@@ -10,10 +10,10 @@ public class Main {
 
 
         FilePartReader read = new FilePartReader();
-        read.setup("texts/text.txt", 0, 0);
+        read.setup("texts/text.txt", 2, 3);
 
-        String[] content = read.readLines();
-        System.out.println(content[2]);
+        String content = read.readLines();
+        System.out.println(content);
 
 
 
