@@ -10,13 +10,13 @@ public class Main {
 
 
         FilePartReader read = new FilePartReader();
-        read.setup("texts/text.txt", 1, 3);
+        read.setup("texts/text.txt", 1, 1);
         FileWordAnalyzer analyzer = new FileWordAnalyzer(read);
 
         String content = read.readLines();
         System.out.println(content);
 
-        System.out.println(analyzer.getWordsOrderedAlphabetically(content));
+        System.out.println(analyzer.getWordsOrderedAlphabetically());
 
 
 
