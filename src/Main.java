@@ -18,6 +18,7 @@ public class Main {
 
         System.out.println(analyzer.getWordsOrderedAlphabetically());
         System.out.println(analyzer.getWordsContainingSubstring("ine"));
+        System.out.println(analyzer.getStringsWhichPalindromes());
 
 
 

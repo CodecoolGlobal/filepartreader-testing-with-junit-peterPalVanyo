@@ -34,6 +34,21 @@ public class FileWordAnalyzer {
         return filteredList;
     }
 
+    public List getStringsWhichPalindromes () throws FileNotFoundException {
+        List<String> textList = getWordsOrderedAlphabetically();
+        List palindromesList = new ArrayList<String>();
+        for(String s: textList){
+            String sMirror = "";
+            for(int i=(s.length()-1); i>=0; i--) {
+                sMirror += s.charAt(i);
+            }
+            if(s.equalsIgnoreCase(sMirror)) {
+                palindromesList.add(s);
+            }
+        }
+        return palindromesList;
+    }
+
 
 
 
