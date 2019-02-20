@@ -13,12 +13,6 @@ public class FileWordAnalyzer {
         this.fileReader = fileReader;
     }
 
-//    public List getWordsOrderedAlphabetically (String text) {
-//        text = text.replace("\n", " ");
-//        List<String> textList = new ArrayList<String>();
-//        textList = Arrays.asList(text.split(" "));
-//        return textList;
-//    }
 
     public List getWordsOrderedAlphabetically () throws FileNotFoundException {
         String text = fileReader.readLines();
@@ -27,6 +21,19 @@ public class FileWordAnalyzer {
         textList = Arrays.asList(text.split(" "));
         return textList;
     }
+
+
+    public List getWordsContainingSubstring (String subString ) throws FileNotFoundException {
+        List<String> textList = getWordsOrderedAlphabetically();
+        List<String> filteredList = new ArrayList<String>();
+        for (String s: textList) {
+            if(s.contains(subString)) {
+                filteredList.add(s);
+            }
+        }
+        return filteredList;
+    }
+
 
 
 
