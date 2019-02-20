@@ -12,9 +12,14 @@ public class FilePartReader {
 
     //it is just the setup
     public void setup(String filePath, int fromLine, int toLine) {
-        this.filePath = filePath;
-        this.fromLine = fromLine;
-        this.toLine = toLine;
+        if(fromLine <= toLine && fromLine > 0) {
+            this.filePath = filePath;
+            this.fromLine = fromLine;
+            this.toLine = toLine;
+        } else {
+            throw new IllegalArgumentException("The from has to be greater than 0 and less than to");
+        }
+
     }
 
     //opens the file on filePath , and gives back it's content as a String
@@ -23,7 +28,6 @@ public class FilePartReader {
         String content = "";
         String fileName = this.filePath;
         File textFile = new File(fileName);
-
         Scanner input = new Scanner(textFile);
         while(input.hasNextLine()) {
             String line = input.nextLine();
