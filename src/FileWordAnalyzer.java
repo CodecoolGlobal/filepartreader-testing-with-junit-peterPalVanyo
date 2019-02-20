@@ -3,6 +3,7 @@ package src;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class FileWordAnalyzer {
@@ -19,6 +20,7 @@ public class FileWordAnalyzer {
         text = text.replace("\n", " ");
         List<String> textList = new ArrayList<String>();
         textList = Arrays.asList(text.split(" "));
+        Collections.sort(textList, String.CASE_INSENSITIVE_ORDER);
         return textList;
     }
 
