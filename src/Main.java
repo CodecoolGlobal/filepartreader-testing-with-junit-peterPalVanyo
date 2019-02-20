@@ -10,6 +10,7 @@ public class Main {
 
 
         FilePartReader read = new FilePartReader();
+        read.setup("texts/text.txt", 0, 0);
 
         String content = read.read();
         System.out.println(content);
