@@ -36,9 +36,10 @@ public class FilePartReader {
     //it gives back every line from it's content between fromLine and toLine (both of them are included),
     // and returns these lines as a String. Take care because if fromLine is 1, it means the very first row in the file.
     // Also, if fromLine is 1 and toLine is 1 also, we will read only the very first line.
-    public String readLines() throws FileNotFoundException {
-        String readString = read();
-        return readString;
+    public String[] readLines() throws FileNotFoundException {
+        String text = read();
+        String[] deconstructed = text.split(System.getProperty("line.separator"));
+        return deconstructed;
     }
 
 }
