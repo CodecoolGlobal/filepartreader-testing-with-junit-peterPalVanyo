@@ -24,6 +24,7 @@ public class FileWordAnalyzer {
         return textList;
     }
 
+//the remain two method reuse the first, so all the return came back alphabetically
 
     public List getWordsContainingSubstring (String subString ) throws FileNotFoundException {
         List<String> textList = getWordsOrderedAlphabetically();
@@ -44,7 +45,7 @@ public class FileWordAnalyzer {
             for(int i=(s.length()-1); i>=0; i--) {
                 sMirror += s.charAt(i);
             }
-            if(s.equalsIgnoreCase(sMirror)) {
+            if(sMirror.equalsIgnoreCase(s)) {
                 palindromesList.add(s);
             }
         }

@@ -10,6 +10,8 @@ import static org.junit.Assert.assertEquals;
 
 public class FileWordAnalyzerTest {
 
+
+
     @org.junit.Test
     public void getWordsOrderedAlphabetically() throws FileNotFoundException {
         FilePartReader read = new FilePartReader();
@@ -21,11 +23,23 @@ public class FileWordAnalyzerTest {
     }
 
     @org.junit.Test
-    public void getWordsContainingSubstring() {
+    public void getWordsContainingSubstring() throws FileNotFoundException {
+        FilePartReader read = new FilePartReader();
+        read.setup("texts/text.txt", 1, 3);
+        FileWordAnalyzer analyzer = new FileWordAnalyzer(read);
+        List<String> result = analyzer.getWordsContainingSubstring("ine");
+        List<String> expected = Arrays.asList("line", "line", "line");
+        assertEquals(expected, result);
     }
 
     @org.junit.Test
-    public void getStringsWhichPalindromes() {
+    public void getStringsWhichPalindromes() throws FileNotFoundException {
+        FilePartReader read = new FilePartReader();
+        read.setup("texts/text.txt", 1, 3);
+        FileWordAnalyzer analyzer = new FileWordAnalyzer(read);
+        List<String> result = analyzer.getStringsWhichPalindromes();
+        List<String> expected = Arrays.asList("aha", "anna");
+        assertEquals(expected, result);
     }
 
     @Test
