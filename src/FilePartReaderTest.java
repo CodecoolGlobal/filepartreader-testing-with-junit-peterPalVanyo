@@ -8,8 +8,8 @@ import static org.junit.Assert.assertEquals;
 
 public class FilePartReaderTest {
 
-    private FilePartReader read;
-    private String result;
+    private static FilePartReader read;
+    private static String result;
 
     @Before
     public void init() throws FileNotFoundException {
