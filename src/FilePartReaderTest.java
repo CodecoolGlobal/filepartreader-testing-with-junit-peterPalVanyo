@@ -30,6 +30,9 @@ public class FilePartReaderTest {
     }
 
     @Test
-    public void readLines() {
+    public void readLines() throws FileNotFoundException {
+        String expected = "First line anna\n";
+        String result = read.readLines();
+        assertEquals(expected, result);
     }
 }
